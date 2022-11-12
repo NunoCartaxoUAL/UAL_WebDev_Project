@@ -1,0 +1,22 @@
+.content{
+    margin: 10px 2%;
+    padding: 10px 20px;
+    background-color: #2e2e2e;
+    color: #fff;
+    display: flex;
+    flex-wrap : wrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+.item{
+    margin: 15px;
+    border-radius: 2px;
+    width: 350px;
+    background-color: #454545;
+    color: #2e2e2e;
+    
+}
+.item_image{
+    padding: 20px;
+}

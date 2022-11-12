@@ -1,0 +1,13 @@
+footer {
+    position: fixed;
+    margin: 0;
+    padding: 1px 5px;
+    bottom: 0;
+    width: 98.5vw;
+    /* Height of the footer*/
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #153222;
+    color: white;
+}

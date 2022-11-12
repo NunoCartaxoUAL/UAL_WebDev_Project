@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Frontend</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/menuStyle.css" rel="stylesheet">
+    <link href="css/contentStyle.css" rel="stylesheet">
+    <link href="css/footerStyle.css" rel="stylesheet">
+    <script src="scripts/menu.js"></script>
+    <script src="https://kit.fontawesome.com/bb7f892c15.js" crossorigin="anonymous"></script>
+    <script src="scripts/checkLogin.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="mainMenu"><img class="logo" src="images/muki.png"></li>
+            <li class="mainMenu active"><a onclick="loadHome()">Shop</a></li>
+            <li class="mainMenu" onclick="loadTalents()"><a class="" href="#talents">Talents</a></li>
+            <li class="mainMenu" onclick="loadContacts()"><a href="#contact">Contact</a></li>
+            <li class="mainMenu" ><a onclick="loadAbout()">About</a></li>
+            <li class="mainMenu loginButton"><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="filter"></div>
+        
+        <div class="content" id="content">
+        </div>
+    
+    </section>
+    <footer>
+        <div class="footer">
+            This is gonna be a footer with infomation that is not yet decided
+        </div>
+    </footer>
+    <script>
+        loadHome();
+    </script>
+</body>
+</html>
