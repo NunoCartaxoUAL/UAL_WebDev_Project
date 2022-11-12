@@ -9,8 +9,8 @@
     <link href="css/contentStyle.css" rel="stylesheet">
     <link href="css/footerStyle.css" rel="stylesheet">
     <script src="scripts/menu.js"></script>
+    <script src="scripts/login.js"></script>
     <script src="https://kit.fontawesome.com/bb7f892c15.js" crossorigin="anonymous"></script>
-    <script src="scripts/checkLogin.js"></script>
 </head>
 
 <body>
@@ -20,16 +20,16 @@
             <li class="mainMenu active"><a onclick="loadHome()">Shop</a></li>
             <li class="mainMenu" onclick="loadTalents()"><a class="" href="#talents">Talents</a></li>
             <li class="mainMenu" onclick="loadContacts()"><a href="#contact">Contact</a></li>
-            <li class="mainMenu" ><a onclick="loadAbout()">About</a></li>
+            <li class="mainMenu"><a onclick="loadAbout()">About</a></li>
             <li class="mainMenu loginButton"><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a></li>
         </ul>
     </nav>
     <section>
         <div class="filter"></div>
-        
+
         <div class="content" id="content">
         </div>
-    
+
     </section>
     <footer>
         <div class="footer">
@@ -39,5 +39,7 @@
     <script>
         loadHome();
     </script>
+    <script src="scripts/checkLogin.js"></script>
 </body>
+
 </html>
