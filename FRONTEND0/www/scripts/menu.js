@@ -1,6 +1,6 @@
 
 function loadHome(){
-
+    clearPage()
     var item_1 = ["name", "images/item_A.png", "drescription" , "price"];
     var item_2 = ["name2", "images/item_A.png", "drescription2" , "price2"];
     var item_3 = ["name3", "images/item_A.png", "drescription3" , "price3"];
@@ -34,8 +34,14 @@ function loadHome(){
 };
 function loadAbout(){
     clearPage()
+    document.getElementById('content').innerHTML=" this will be filled with about";
+    alert(logged)
 };
+function loadTalents(){
+    clearPage()
+    document.getElementById('content').innerHTML=" this will be filled with talents information";
+};
+
 function clearPage(){
-    
     document.getElementById('content').innerHTML="";
 };

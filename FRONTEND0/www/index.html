@@ -10,6 +10,7 @@
     <link href="css/footerStyle.css" rel="stylesheet">
     <script src="scripts/menu.js"></script>
     <script src="scripts/login.js"></script>
+    <script src="scripts/checkLogin.js"></script>
     <script src="https://kit.fontawesome.com/bb7f892c15.js" crossorigin="anonymous"></script>
 </head>
 
@@ -19,7 +20,6 @@
             <li class="mainMenu"><img class="logo" src="images/muki.png"></li>
             <li class="mainMenu active"><a onclick="loadHome()">Shop</a></li>
             <li class="mainMenu" onclick="loadTalents()"><a class="" href="#talents">Talents</a></li>
-            <li class="mainMenu" onclick="loadContacts()"><a href="#contact">Contact</a></li>
             <li class="mainMenu"><a onclick="loadAbout()">About</a></li>
             <li class="mainMenu loginButton"><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a></li>
         </ul>
@@ -37,9 +37,10 @@
         </div>
     </footer>
     <script>
+        redirectToLogin();
         loadHome();
     </script>
-    <script src="scripts/checkLogin.js"></script>
+    
 </body>
 
 </html>

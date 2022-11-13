@@ -9,6 +9,8 @@
     <link href="css/menuStyle.css" rel="stylesheet">
     <link href="css/contentStyle.css" rel="stylesheet">
     <link href="css/footerStyle.css" rel="stylesheet">
+    <script src="scripts/login.js"></script>
+    <script src="scripts/checkLogin.js"></script>
     <script src="https://kit.fontawesome.com/bb7f892c15.js" crossorigin="anonymous"></script>
 </head>
 
@@ -22,34 +24,41 @@
 
 
     <section>
-        <div class="content">
-            <div class="center">
-                <h1>Log-in</h1>
-                <form method="post">
-                    <div class="txt_field">
-                        <input type="text" required>
-                        <span></span>
-                        <label>Username</label>
-                    </div>
-                    <div class="txt_field">
-                        <input type="password" required>
-                        <span></span>
-                        <label>Password</label>
-                    </div>
-                    <div class="pass">Forgot Password? </div>
-                    <input type="submit" value="Login">
-                    <div class="signup_link">
-                        Not a member? <a href="#">Signup</a>
-                    </div>
-                </form>
-            </div>
+        <div class="content" id="content">
+            
         </div>
+        
+        <script>
+            function validateForm() {
+                var un = document.loginform.usr.value;
+                var pw = document.loginform.pword.value;
+                var username = "asd"; 
+                var password = "asd";
+                var logged = true;
+                localStorage.setItem("logged", logged);
+                
+                alert(yo)
+                if ((un == username) && (pw == password)) {
+                    return true;
+                }
+                else {
+                    alert ("Login was unsuccessful, please check your username and password");
+                    return false;
+                }
+          }
+        </script>
     </section>
+    
+    
     <footer>
         <div class="footer">
             This is gonna be a footer with infomation that is not yet decided
         </div>
     </footer>
+    <script>
+        loadLogin()
+        redirectToIndex()
+    </script>
 </body>
 
 </html>
