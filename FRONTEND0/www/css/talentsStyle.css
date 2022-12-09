@@ -1,0 +1,57 @@
+.talents{
+    width:80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+h1{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+
+}
+
+h3{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.talents-col{
+    flex-basis: 31%;
+    background: #454545;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+
+.talents-col:hover{
+    box-shadow: 0 0 20px 0px rgb(126, 124, 124);
+}
+
+.socials{
+    color: #fff;
+    margin: auto;
+    text-align: left;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13.5px;
+}
+
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+}

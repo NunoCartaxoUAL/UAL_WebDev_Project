@@ -39,7 +39,40 @@ function loadAbout(){
 };
 function loadTalents(){
     clearPage()
-    document.getElementById('content').innerHTML=" this will be filled with talents information";
+    document.getElementById('content').innerHTML=`
+    
+    <div class = "talents">
+    <h1>Talents</h1>
+    <div class="row" id="talents">
+        <div class="talents-col">
+            <img src="images/eve.jpg" style="max-width:100%;height:auto;"></a>
+            <h3><b>Eve</b></h3>
+            <p>INFO ABOUT THE TALENT</p>
+            <a class="socials" href="https://www.google.com/%22%3E" id="socials">
+                <b> Socials ➝ </b>
+            </a>
+        </div>
+
+        <div class="talents-col">
+            <img src="images/ado.jpg" style="max-width:100%;height:auto;">
+            <h3><b>Ado</b></h3>
+            <p>INFO ABOUT THE TALENT</p>
+            <a class="socials" href="https://www.google.com/%22%3E" id="socials">
+                <b>Socials ➝</b>
+            </a>
+        </div>
+
+        <div class="talents-col">
+            <img src="images/fujii.jpg" style="max-width:100%;height:auto;">
+            <h3><b>Fujii Kaze</b></h3>
+            <p>INFO ABOUT THE TALENT</p>
+            <a class="socials" href="https://www.google.com/" id="socials">
+                <b>Socials ➝</b>
+            </a>
+
+        </div>
+    </div>
+    `
 };
 
 function clearPage(){
