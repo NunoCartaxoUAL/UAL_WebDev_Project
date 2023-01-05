@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Frontend</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/menuStyle.css" rel="stylesheet">
+    <link href="css/contentStyle.css" rel="stylesheet">
+    <link href="css/talentsStyle.css" rel="stylesheet">
+    <link href="css/aboutStyle.css"  rel="stylesheet">
+    <link href="css/footerStyle.css" rel="stylesheet">
+    <link href="css/loginStyle.css" rel="stylesheet">
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/checkLogin.js"></script>
+    <script src="https://kit.fontawesome.com/bb7f892c15.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="mainMenu"><img class="logo" src="images/muki.png"></li>
+            <li class="mainMenu active"><a onclick="loadHome()">Shop</a></li>
+            <li class="mainMenu" onclick="loadTalents()"><a class="" href="#talents">Talents</a></li>
+            <li class="mainMenu"><a onclick="loadAbout()">About</a></li>
+            <button class="rightSide" onclick="loadPopup()" style="display: block;" id="login"><i class="fa fa-user" aria-hidden="true"></i></button> <!--Login-->  
+            <button class="rightSide" onclick="logout()" id="signout"><i class="fa fa-sign-out" aria-hidden="true"><span class="tooltiptext">Sign Out</span></i></button> <!--Logout-->
+            <button class="rightSide" onclick="loadCart()" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button> <!--Carrinho-->
+        </ul>
+    </nav>
+<section>
+    <div class="content" id="content"></div>
+
+    <div class = "popup" id="showLogin">
+        <div class="close-btn" onclick="closePopup()">&times;</div>
+        <div class="form">
+            <h2 style="color: white; font-family: Arial, Helvetica, sans-serif;">Login</h2>
+            <div class="formElement">
+                <label for="email" style="color: white;"><h4>Email</h4></label>
+                <input type="text" id="email" placeholder="Enter Email">
+            </div>
+            <div class="formElement">
+                <label for="password" style="color: white;"><h4>Password</h4></label>
+                <input type="password" id="password" placeholder="Enter Password">
+            </div>
+            <center><div id="pMsg" style="color: white;"></div></center>
+            <div class="formElement">
+                <button onclick="login()" style="font-family: Arial, Helvetica, sans-serif;" >Login</button>
+            </div>
+            <div class="formElement">
+                <a href="#"> Sign Up </a>
+            </div>
+        </div>
+    </div>
+<!--
+    <div class = "popup" id="showLogin">
+        <div class="close-btn" onclick="closePopup()">&times;</div>
+        <div class="form">
+            <h2 style="color: white; font-family: Arial, Helvetica, sans-serif;">Sign Up</h2>
+            <div class="formElement">
+                <label for="email" style="color: white;"><h4>Email</h4></label>
+                <input type="text" id="email" placeholder="Enter Email">
+            </div>
+            <div class="formElement">
+                <label for="password" style="color: white;"><h4>Password</h4></label>
+                <input type="password" id="password" placeholder="Enter Password">
+            </div>
+            <center><div id="pMsg" style="color: white;"></div></center>
+            <div class="formElement">
+                <button onclick="login()" style="font-family: Arial, Helvetica, sans-serif;" >Login</button>
+            </div>
+            <div class="formElement">
+                <a href="#"> Login </a>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+<footer>
+    <div class="footer">
+        &copy; Copyright 2023 
+
+    </div>
+</footer>
+<script>
+    loadHome();
+</script>
+
+</body>
+
+</html>
