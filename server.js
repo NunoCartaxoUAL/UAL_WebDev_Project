@@ -165,3 +165,11 @@ app.listen(PORT, () => {
 });
 
 
+/*var mysql = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'banana',
+  password : 'joemama123456789',
+  database : 'Projeto WD'
+}); */
+

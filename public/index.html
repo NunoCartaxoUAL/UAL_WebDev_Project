@@ -11,6 +11,7 @@
     <link href="css/aboutStyle.css"  rel="stylesheet">
     <link href="css/footerStyle.css" rel="stylesheet">
     <link href="css/loginStyle.css" rel="stylesheet">
+    <link href = "css/cartStyle.css" rel="stylesheet">
     <script src="scripts/menu.js"></script>
     <script src="scripts/login.js"></script>
     <script src="scripts/checkLogin.js"></script>
@@ -18,17 +19,17 @@
 </head>
 
 <body>
-    <nav>
+    <header>        
         <ul>
             <li class="mainMenu"><img class="logo" src="images/muki.png"></li>
-            <li class="mainMenu active"><a onclick="loadHome()">Shop</a></li>
-            <li class="mainMenu" onclick="loadTalents()"><a class="" href="#talents">Talents</a></li>
-            <li class="mainMenu"><a onclick="loadAbout()">About</a></li>
-            <button class="rightSide" onclick="loadPopup()" style="display: block;" id="login"><i class="fa fa-user" aria-hidden="true"></i></button> <!--Login-->  
+            <li class="mainMenu" onclick="loadHome()"><a>Shop</a></li>
+            <li class="mainMenu" onclick="loadTalents()"><a>Talents</a></li>
+            <li class="mainMenu" onclick="loadAbout()"><a>About</a></li>
+            <button class="rightSide" onclick="loadPopup()" style ="display: block;" id="login"><i class="fa fa-user" aria-hidden="true"></i></button> <!--Login-->  
             <button class="rightSide" onclick="logout()" id="signout"><i class="fa fa-sign-out" aria-hidden="true"><span class="tooltiptext">Sign Out</span></i></button> <!--Logout-->
             <button class="rightSide" onclick="loadCart()" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button> <!--Carrinho-->
         </ul>
-    </nav>
+    </header>
 <section>
     <div class="content" id="content"></div>
 
@@ -46,16 +47,16 @@
             </div>
             <center><div id="pMsg" style="color: white;"></div></center>
             <div class="formElement">
-                <button onclick="login()" style="font-family: Arial, Helvetica, sans-serif;" >Login</button>
+                <button onclick="login(),closePopup()" style="font-family: Arial, Helvetica, sans-serif;" >Login</button>
             </div>
             <div class="formElement">
-                <a href="#"> Sign Up </a>
+                <a href="#" onclick="loadSignUp"  style="color: white;"> Sign Up </a>  <!--To do-->
             </div>
         </div>
     </div>
 <!--
-    <div class = "popup" id="showLogin">
-        <div class="close-btn" onclick="closePopup()">&times;</div>
+    <div class = "popup" id="showCart">
+        <div class="close-cart" onclick="closePopup()">&times;</div>
         <div class="form">
             <h2 style="color: white; font-family: Arial, Helvetica, sans-serif;">Sign Up</h2>
             <div class="formElement">
@@ -77,16 +78,17 @@
     </div>
 </section>
 -->
+
 <footer>
     <div class="footer">
         &copy; Copyright 2023 
 
     </div>
 </footer>
+
 <script>
     loadHome();
 </script>
 
 </body>
-
 </html>

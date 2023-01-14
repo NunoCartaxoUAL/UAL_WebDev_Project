@@ -11,3 +11,11 @@ footer {
     background: #153222;
     color: white;
 }
+
+@media(max-width: 700px){
+    footer{
+        height: 20px;
+        margin-top: 50%;
+        width: 94%;
+    }
+  }

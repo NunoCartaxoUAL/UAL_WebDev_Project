@@ -1,14 +1,15 @@
 function loadPopup(){
     document.getElementById('showLogin').style.opacity = 1;
-   //document.getElementById('showLogin').classList.add('show')
-    document.getElementById('showLogin').style.top = "36%"
+    document.getElementById('showLogin').style.top = "37%"
 }
-
-
-
 
 function closePopup(){
     document.getElementById('showLogin').style.opacity = 0 
+    document.getElementById('showLogin').style.top = "-150%"
+}
+
+function loadSignUp(){
+    
 }
 
 
@@ -118,3 +119,4 @@ async function makeRequest(url, options) {
         console.log(err);
     }
 }
+

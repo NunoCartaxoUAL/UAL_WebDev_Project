@@ -19,7 +19,7 @@ function loadHome(){
                     </div>
                 </td>
                 <td>
-                    <div class="item_info" style="color: #fff;">
+                    <div style="color: #fff;">
                         <h3><b>`+n[0]+`</b></h3>
                         `+n[2]+`
                         <br>
@@ -28,7 +28,7 @@ function loadHome(){
                     </div>
                     <div class="item_buy">
                     <br>
-                        <button>
+                        <button class ="buyButton" role="button">
                             Add to Cart
                         </button>
                     </div>
@@ -37,41 +37,8 @@ function loadHome(){
         </table>
     </div>`;
     });
-    
 };
-function loadAbout(){
-    clearPage()
-    document.getElementById('content').innerHTML=`
 
-        <p style ="font-family: Arial, Helvetica, sans-serif;"><h1> About Us </h1></p>
-        
-        <div class="aboutBox">
-        <h2><p> Welcome to our vinyl shop! We are a team of music lovers who are dedicated to bringing the joy of vinyl records to music fans around the world. Our online store offers a wide variety of artists and genres to match your taste. </p> 
-        <p> We believe that vinyl offers a unique listening experience that digital formats can't match, the warmth and depth of the sound, the tactile experience of handling the record, and the artwork and packaging of the physical product. We are committed to preserving and promoting the art of vinyl and we hope that our online shop can help bring this experience to even more people. </p>     
-        <p> Thank you for visiting us and we hope you find something that you love in our collection. </p> </h2>
-        </div>
-
-    <div class="case">
-        <div class="contactInfo">
-            <div class="box">
-                <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                <div class="text">
-                    <h4> Email <br>  projetoDW@support.ual </h4>
-                </div>
-            </div>
-            <div class="box">
-                <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                <div class="text">
-                    <h4> <b>Phone</b> <br>+351 912 345 678 </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class = "boxV2"> 
-    </div>
-    `;
-    alert(logged)
-};
 function loadTalents(){
     clearPage()
     document.getElementById('content').innerHTML=`
@@ -108,6 +75,40 @@ function loadTalents(){
         </div>
     </div>
     `
+};
+
+function loadAbout(){
+    clearPage()
+    document.getElementById('content').innerHTML=`
+
+        <p style ="font-family: Arial, Helvetica, sans-serif;"><h1> About Us </h1></p>
+        
+        <div class="aboutBox">
+        <h2><p> Welcome to our vinyl shop! We are a team of music lovers who are dedicated to bringing the joy of vinyl records to music fans around the world. Our online store offers a wide variety of artists and genres to match your taste. </p> 
+        <p> We believe that vinyl offers a unique listening experience that digital formats can't match, the warmth and depth of the sound, the tactile experience of handling the record, and the artwork and packaging of the physical product. We are committed to preserving and promoting the art of vinyl and we hope that our online shop can help bring this experience to even more people. </p>     
+        <p> Thank you for visiting us and we hope you find something that you love in our collection. </p> </h2>
+        </div>
+
+    <div class="case">
+        <div class="contactInfo">
+            <div class="box">
+                <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <div class="text">
+                    <h4> Email <br>  projetoDW@support.ual </h4>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                <div class="text">
+                    <h4> <b>Phone</b> <br>+351 912 345 678 </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "boxV2"> 
+    </div>
+    `;
+    alert(logged)
 };
 
 function clearPage(){
