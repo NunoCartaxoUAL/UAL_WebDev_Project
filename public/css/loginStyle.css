@@ -100,5 +100,11 @@
         font-family: Arial, Helvetica, sans-serif;
         
     }
+
+    .popup .form .formElement input[type="text"], 
+    .popup .form .formElement input[type="password"]{
+        width: 88.5%;
+        border-radius: 10px;
+    }
 }
 

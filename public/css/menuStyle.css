@@ -74,7 +74,7 @@ ul {
   padding: 5px 4px;
   font-size: 10px;
   margin-top: 33px;
-  margin-left: -50px;
+  margin-left: -60px;
 
   /* Position the tooltip */
   position: absolute;
@@ -121,5 +121,7 @@ ul {
     margin-top: -13px;
   }
 
+  .rightSide .tooltiptext {
+    display: none;
+  }
 }
-
