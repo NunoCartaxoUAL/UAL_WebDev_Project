@@ -98,6 +98,42 @@ ul {
   .rightSide{
       display: none;
       text-align: center;
+      padding: 10px 10px;
+      font-size: 0.5em;
+      right: 7px;
+  }
+
+  .fa-user:before{
+    position:relative;
+    margin-left: -7px;
+    margin-top: -13px;
+  }
+
+  .fa-sign-out:before{
+    position: relative;
+    margin-left: -7px;
+    margin-top: -13px;
+  }
+
+  .fa-shopping-cart:before{
+    position: relative;
+    margin-left: -9.5px;
+    margin-top: -13px;
+  }
+
+  .rightSide .tooltiptext {
+    display: none;
+  }
+
+  .mainMenu {
+    font-size: 12px;;
+  }
+}
+
+@media screen and (max-width: 1500px){
+  .rightSide{
+      display: none;
+      text-align: center;
       padding: 22px 22px;
       font-size: 1em;
       right: 10px;
@@ -119,6 +155,18 @@ ul {
     position: relative;
     margin-left: -9.5px;
     margin-top: -13px;
+  }
+
+  .fa-pencil::before{
+    position:relative;
+    margin-left: -7px;
+    margin-top: -13px;
+  }
+
+  .fa-search::before{
+    position:relative;
+    margin-left: -7px;
+    margin-top: -20px;
   }
 
   .rightSide .tooltiptext {

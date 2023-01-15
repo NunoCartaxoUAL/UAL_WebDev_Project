@@ -1,3 +1,11 @@
+#search{
+    display: block;
+}
+
+#edit{
+    display: block;
+}
+
 .popup{
     position: fixed;
     border: 0.5px solid rgb(255, 255, 255);
@@ -84,6 +92,34 @@
 @media screen and (max-width: 428px){
     .popup {
         width: 200px;
+        padding: 53px 52px;
+        position: fixed;
+    }
+
+    .popup .form .formElement button{
+        font-size: 16px;
+    }
+
+    .popup .form .formElement a{
+        font-size: 10px;
+    }
+
+    .popup .form .formElement label{
+        font-family: Arial, Helvetica, sans-serif;
+        
+    }
+
+    .popup .form .formElement input[type="text"], 
+    .popup .form .formElement input[type="password"]{
+        width: 88.5%;
+        border-radius: 10px;
+    }
+}
+
+
+@media screen and (max-width: 574px){
+    .popup {
+        width: 220px;
         padding: 53px 52px;
         position: fixed;
     }

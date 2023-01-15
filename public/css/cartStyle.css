@@ -226,7 +226,7 @@ table{
     width:25%!important;
 }
 
-@media screen and (max-width: 428px){
+@media screen and (max-width: 704px){
     .popupCart {
         width: 200px;
         padding: 53px 52px;
