@@ -1,3 +1,5 @@
+
+
 function loadPopup(){
     document.getElementById('showLogin').style.opacity = 1;
     document.getElementById('showLogin').style.top = "37%"
@@ -6,10 +8,6 @@ function loadPopup(){
 function closePopup(){
     document.getElementById('showLogin').style.opacity = 0 
     document.getElementById('showLogin').style.top = "-150%"
-}
-
-function loadSignUp(){
-    
 }
 
 
@@ -39,6 +37,7 @@ async function login(){
                 localStorage.setItem("token", json.token);
                 document.getElementById("email").value = "";
                 document.getElementById("password").value = "";
+                closePopup()
                 break;
             }
         case 401:
@@ -65,8 +64,21 @@ function logout() {
     document.getElementById("cart").style.display = "none"
     localStorage.removeItem("token");
 
+}
 
-
+function loadLoginBTN() {
+    document.getElementById("loginBtn").style.display = "block";
+    document.getElementById("signUpBtn").style.display = "none";
+    document.getElementById( "Switch" ).setAttribute( "onClick", "loadsignUpBTN();" );
+    document.getElementById( "Switch" ).innerHTML = "Sign Up";
+    document.getElementById( "popupTitle" ).innerHTML = "Login";
+}
+function loadsignUpBTN() {
+    document.getElementById("loginBtn").style.display = "none";
+    document.getElementById("signUpBtn").style.display = "block";
+    document.getElementById( "Switch" ).setAttribute( "onClick", "loadLoginBTN();" );
+    document.getElementById( "Switch" ).innerHTML = "Back to Login";
+    document.getElementById( "popupTitle" ).innerHTML = "Sign Up";
 }
 
 function signIn() {
@@ -76,14 +88,16 @@ function signIn() {
     document.getElementById("btnRegistar").style.display = "inline";
 }
 
-async function sendSignIn() {
+
+
+async function signUp() {
     const nome = document.getElementById("email").value;
     const senha = document.getElementById("password").value;
     const user = {
         username: nome,
         password: senha,
     };
-    const response = await makeRequest("http://localhost:8002/registar", {
+    const response = await makeRequest("http://localhost:8080/signUp", {
         method: "POST",
         body: JSON.stringify(user),
         headers: { "Content-type": "application/json; charset=UTF-8" },

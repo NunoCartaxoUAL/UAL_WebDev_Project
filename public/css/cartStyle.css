@@ -1,0 +1,241 @@
+.popupCart{
+    position: fixed;
+    margin: auto;
+    border: 0.5px solid rgb(255, 255, 255);
+    top: -150%; 
+    left: 50%;  
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 500px;
+    height: 550px;
+    padding: 20px 30px;
+    background: #2e2e2e;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15); 
+    border-radius: 10px;
+    transition: top 0ms ease-in-out 200ms, 
+                opacity 100ms ease-in-out 200ms, 
+                transform 20ms ease-in-out 0ms;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.popupCart .closeCart{
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    width: 23px;
+    height: 23px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    line-height: 23px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.containerV2{
+    padding: 2rem 0rem;
+  }
+
+.fade{
+    transition:opacity .15s linear;
+}
+
+.modal-dialog{
+    position:relative;
+    width:auto;
+    margin:.5rem;
+    pointer-events:none
+}
+
+.modal-lg{
+    max-width:800px;
+}
+
+.modal-dialog-centered{
+    min-height:calc(100% - (1.75rem * 2))
+}
+
+.modal-content{position:relative;
+    display: -ms-flexbox;
+    display:flex;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    width:100%;
+    pointer-events:auto;
+    background: #2e2e2e;
+    background-clip:padding-box;
+
+    border-radius:.3rem;
+    outline:0
+}
+
+.modal-header .close{
+    padding:1rem;
+    margin:-1rem -1rem -1rem auto
+}
+
+.border-bottom-0{
+    border-bottom:0!important
+}
+
+.modal-title{
+    color: white;
+    text-align: center;
+    margin-bottom:0;
+    line-height:1.5;
+}
+
+.modal-body{
+    position:relative;
+    -ms-flex:1 1 auto;
+    flex:1 1 auto;
+    padding:1rem;
+    background: #2e2e2e;
+}
+
+.tableC{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: scroll;
+    height: 400px;
+}
+
+.tableI{
+    border-spacing: 50px;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+.productI{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-top: 50px;
+}
+  
+.table-image thead td, .table-image thead th {
+    border: 0;
+    color: white;
+    font-size: 15px;
+}
+
+.table-image td, .table-image th {
+    text-align: center;
+}
+
+.table-image td.qty, .table-image th.qty {
+    max-width: 2rem;
+}
+
+.img-fluid{
+    max-width:100%;
+    height:auto
+}
+
+.img-thumbnail{
+    padding:3px;
+    background-color:white;
+    border-radius:10px;
+    max-width:100%;
+    height:auto
+}
+
+.form-control{
+    transition:none
+}
+
+.form-control::-ms-expand{
+    background-color:transparent;
+    border:0
+}
+
+.btn-danger{
+    color:#fff;
+    background-color:#dc3545;
+    border-color:#dc3545;
+}
+
+.btn-sm{
+    padding:2.5px 5px;
+    font-size:11px;
+    border-radius:10px
+}    
+
+.price {
+    margin-left: 1px;
+}
+
+.priceP{
+    margin-top: 500px;
+}
+  
+.modal-footer {
+    padding-top: 0rem;
+    color: white;
+    margin-top:20px;
+    height: 40px;
+    text-align: center;
+}
+
+.d-flex{
+    color: white;
+    margin-left: 420px;
+    display:-ms-flexbox!important;
+    display:flex!important;
+}
+
+.justify-content-end{
+    -ms-flex-pack:end!important;
+    justify-content:flex-end!important;
+}
+
+.text-success{
+    color:#28a745!important;
+}
+
+
+.justify-content-between{
+    -ms-flex-pack:justify!important;
+    justify-content:space-between!important;
+}
+
+.btn-success{
+    color:#fff;
+    background-color:#28a745;
+    border-color:#28a745;
+    height: 30px;
+    width: 100%;
+}
+
+.qty input[type="text"]{
+    width: 50%;
+}
+
+.table{width:100%;
+    max-width:100%;
+    margin-bottom:1rem;
+    background-color:transparent;
+}
+
+.table td,.table th{
+    padding:.75rem;
+    vertical-align:top;
+    border-top:1px solid #dee2e6
+}
+
+.table thead th{
+    vertical-align:bottom;
+    border-bottom:2px solid #dee2e6
+}
+
+.w-25{
+    width:25%!important;
+}
+
+@media(max-width: 700px){
+    .popupCart {
+        width: 200px;
+        padding: 53px 52px;
+        position: fixed;
+    }
+}

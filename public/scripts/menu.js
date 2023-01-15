@@ -1,6 +1,22 @@
+async function calendar(){
+    const response = await fetch('/calendar');
+    // Parsing it to JSON format
+    const data = await response.json();
+    random = parseInt(Math.floor(Math.random() * data.response.holidays.length)+1)
+    holiday= data.response.holidays[random];
 
-function loadHome(){
+    document.getElementById("randomHol").innerHTML += "did you know? "+holiday.date.iso.substring(0, 10) +" was a holiday in japan, it was the "+holiday.name+".     "
+    /*fetch('/calendar')
+.then(response => {
+    const data = response.json();
+    console.log(dados.results);
+    document.getElementById("randomHol").innerHTML += "did you know? "
+
+})*/
+}
+async function loadHome(){
     clearPage()
+    /*
     var item_1 = ["Fujii Kaze", "images/vinyl1.jpg", "Deluxe Vinyl" , "50€"];
     var item_2 = ["Polyphia", "images/vinyl2.jpg", "Standard Vinyl" , "25€"];
     var item_3 = ["Eve", "images/vinyl3.jpg", "Standard Vinyl" , "25€"];
@@ -10,21 +26,27 @@ function loadHome(){
     var item_7= ["Random", "images/item_A.png", "Vinyl" , "20€"];
     var item_8= ["Random", "images/item_A.png", "Vinyl" , "20€"];
     var items= [item_1,item_2,item_3,item_4,item_5,item_6,item_7,item_8]
-    items.forEach(n => {
+    */
+    const prod = await makeRequest("http://localhost:8080/products", {
+        method: "GET",
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+    });
+    json = await prod.json();
+    json.forEach(n => {
         document.getElementById('content').innerHTML+=`<div class="item"><table>
             <tr>
                 <td>
                     <div class="item_image">
-                        <img src="`+n[1]+`">
+                        <img src="`+n["image"]+`">
                     </div>
                 </td>
                 <td>
                     <div style="color: #fff;">
-                        <h3><b>`+n[0]+`</b></h3>
-                        `+n[2]+`
+                        <h3><b>`+n["name"]+`</b></h3>
+                        `+n["type"]+`
                         <br>
                         <br>
-                        `+n[3]+`
+                        `+n["price"]+`€
                     </div>
                     <div class="item_buy">
                     <br>
@@ -105,12 +127,25 @@ function loadAbout(){
             </div>
         </div>
     </div>
-    <div class = "boxV2"> 
+    <div class = "boxV2" style:"overflow: hidden;"> 
+    <embed src="twit.html" style="width:300px; height: 200px;">
     </div>
+    
     `;
-    alert(logged)
 };
 
 function clearPage(){
     document.getElementById('content').innerHTML="";
 };
+
+// SHOPPING CART
+
+function loadCart(){
+    document.getElementById('showCart').style.opacity = 1;
+    document.getElementById('showCart').style.top = "47%";
+}
+
+function closeCart(){
+    document.getElementById('showCart').style.opacity = 0;
+    document.getElementById('showCart').style.top = "-150%";
+}

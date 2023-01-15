@@ -8,5 +8,10 @@
         "username": "banana",
         "password": "banana",
         "type": 0
+    },
+    {
+        "username": "this",
+        "password": "thatt",
+        "tipo": 0
     }
 ]

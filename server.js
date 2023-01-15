@@ -20,11 +20,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 let users = require('./db/users');
 let dados = require('./db/dados');
+let products = require('./db/products');
 let favoritos = require('./db/favoritos');
 
 // SIGNIN
-
-app.post("/signIn", (req, res) => {
+app.post("/signUp", (req, res) => {
     const username = req.body.username;
     if (!userExists(username)) {
         const newUser = {
@@ -96,6 +96,13 @@ function validarToken(token) {
         return false;
     }
 }
+app.get("/products",(req, res) => {
+    if (products) {
+        res.status(200).json(products);
+    } else {
+        res.status(404).json({ msg: "the products weren't found" });
+    }
+});
 
 // Acesso à informação somente se autorizado
 app.get("/listarDados", (req, res) => {
@@ -127,37 +134,23 @@ function getFavoritos(username) {
     return lista;
 }
 
+ // Load the package
+ const Calendarific = require('calendarific');
 
-const options = {
-  method: 'GET',
-  url: 'https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random',
-  headers: {
-    accept: 'application/json',
-    'X-RapidAPI-Key': '05f70cb088mshc5761916a74abaap1de996jsnabbb04367815',
-    'X-RapidAPI-Host': 'matchilling-chuck-norris-jokes-v1.p.rapidapi.com',
-    useQueryString: true
-  }
-};
+app.get('/calendar', (req, res) => {
+     // Initlize with an API key
+    const clapi = new Calendarific('deecbb17519de97a6ec9d3effe8c7fff2e094767');
+    const parameters = {
+    country: 'JP',
+    year: parseInt(Math.floor(Math.random() * 40) + 1980),
+    };
 
-
-app.get('/api', (req, res) => {
-    request(options, function (error, response, body) {
-        if (error) throw new Error(error);
-        res.send(body)
+    clapi.holidays(parameters, function (data) {
+        res.send(data)
+    // Insert awesome code here...
     });
 });
 
-
-
-
-////////////////////////// Login.js
-
-
-
-
-
-
-////////////////////////// 
 
 app.use(express.static('public'));
 app.listen(PORT, () => {
@@ -165,11 +158,4 @@ app.listen(PORT, () => {
 });
 
 
-/*var mysql = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'banana',
-  password : 'joemama123456789',
-  database : 'Projeto WD'
-}); */
 
