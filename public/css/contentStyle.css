@@ -50,9 +50,10 @@
     left: 5px;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 428px) {
     .buyButton {
     padding: 0.25em 0.75em;
+    margin-left: 4px;
     }
 }
 

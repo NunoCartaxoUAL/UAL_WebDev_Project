@@ -50,7 +50,7 @@ h3{
     font-size: 13.5px;
 }
 
-@media(max-width: 700px){
+@media screen and (max-width: 428px){
     .row{
         flex-direction: column;
     }

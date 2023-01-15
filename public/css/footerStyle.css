@@ -12,7 +12,7 @@ footer {
     color: white;
 }
 
-@media(max-width: 700px){
+@media screen and (max-width: 428px){
     footer{
         height: 20px;
         margin-top: 50%;

@@ -2,7 +2,7 @@
 
 function loadPopup(){
     document.getElementById('showLogin').style.opacity = 1;
-    document.getElementById('showLogin').style.top = "37%"
+    document.getElementById('showLogin').style.top = "47%"
 }
 
 function closePopup(){
