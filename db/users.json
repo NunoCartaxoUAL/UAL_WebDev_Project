@@ -5,13 +5,13 @@
         "type": 1
     },
     {
-        "username": "cabrita",
-        "password": "cabrita",
-        "type": 1
-    },
-    {
         "username": "test2",
         "password": "test2",
+        "type": 0
+    },
+    {
+        "username": "Delda",
+        "password": "delda",
         "type": 0
     }
 ]
