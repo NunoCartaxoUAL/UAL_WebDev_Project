@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const request = require('request');
-
+const path = require('path');
+const https = require('https');
 
 const app = express();
 
@@ -30,7 +31,7 @@ app.post("/signUp", (req, res) => {
         const newUser = {
             username: username,
             password: req.body.password,
-            tipo: 0
+            type: req.body.type
         }
         if (newUser.password.length < 5) {
             return res.status(400).send({
@@ -48,20 +49,86 @@ app.post("/signUp", (req, res) => {
         });
     }
 });
+app.post("/registerProd", (req, res) => {
+    newid = products[products.length-1].id+1
+    const newProd = {
+        id: newid,
+        name: req.body.name,
+        image: req.body.image,
+        type: req.body.type,
+        price:req.body.price
+    };
+
+    products.push(newProd);
+    writeToDB("./db/products.json", products);
+    return res.status(201).send({
+        msg: `prod created ${newProd.name}`
+    });
+    
+});
+app.delete("/deleteProd/:name", (req, res) => {
+    const name= req.params.name;
+    let dbAux = [];
+    for (prod of products){
+        if (prod.name == name) {
+            result=prod;
+        }else{
+            dbAux.push(prod);
+        }
+    }
+    products = [];
+    for (let i = 0; i < dbAux.length; i++) {
+        products.push(dbAux[i]); // copia os dados
+    }
+    writeToDB("./db/products.json", products);
+    return res.status(201).send({
+        msg: `prod deleted`
+    });
+    
+});
+
+app.delete("/removeUser/:username", (req, res) => {
+    const username = req.params.username;
+    if (userExists(username)) {
+
+        let dbAux = [];
+        for (user of users){
+            if (user.username == username) {
+                result=user;
+            }else{
+                dbAux.push(user);
+            }
+        }
+
+        users = [];
+        for (let i = 0; i < dbAux.length; i++) {
+            users.push(dbAux[i]); // copia os dados
+        }
+        writeToDB("./db/users.json", users);
+        return res.status(201).send({
+            msg: `User deleted ${username}`
+        });
+    } else {
+        return res.status(409).send({
+            msg: 'User doesnt exist'
+        });
+    }
+});
 
 //Login
 
 app.post("/login", (req, res) => {
     const nome = req.body.username;
     const senha = req.body.password;
-    for (utilizador of users) {
-        if (utilizador.username === nome)
-            if (utilizador.password === senha) {
-                token = jwt.sign(utilizador, process.env.SECRET);
+    for (user of users) {
+        if (user.username === nome)
+            if (user.password === senha) {
+                token = jwt.sign(user, process.env.SECRET);
                 return res.status(201).json({ 
                     auth: true, 
                     token: token,
-                msg: getFavoritos(utilizador.username) })
+                    msg: getFavoritos(user.username),
+                    type: user.type })
             } else {
                 return res.status(401).json({ msg: "Invalid Password!" })
             }
@@ -82,8 +149,8 @@ function writeToDB(fich, db) {
 }
 
 function userExists(nome) {
-    for (utilizador of users)
-        if (utilizador.username === nome) {
+    for (user of users)
+        if (user.username === nome) {
             return true;
         }
     return false;
@@ -104,11 +171,19 @@ app.get("/products",(req, res) => {
     }
 });
 
+app.get("/listUsers",(req, res) => {
+    if (products) {
+        res.status(200).json(users);
+    } else {
+        res.status(404).json({ msg: "the products weren't found" });
+    }
+});
+
 // Acesso à informação somente se autorizado
 app.get("/listarDados", (req, res) => {
     const decoded = validarToken(req.header('token'));
     if (!decoded) {
-        return res.status(401).json({ msg: "Utilizador não autenticado ou não autorizado!" });
+        return res.status(401).json({ msg: "user não autenticado ou não autorizado!" });
     }
     const nome = decoded.username;
     if (dados) {
@@ -119,7 +194,7 @@ app.get("/listarDados", (req, res) => {
 });
 
 function getFavoritos(username) {
-    let lista = "<h3>Favoritos do utilizador " + username + "</h3><br>";
+    let lista = "<h3>Favoritos do user " + username + "</h3><br>";
     for (fav of favoritos){
         if (fav.Username === username){
             let id = fav.DadoId;
@@ -147,15 +222,22 @@ app.get('/calendar', (req, res) => {
 
     clapi.holidays(parameters, function (data) {
         res.send(data)
-    // Insert awesome code here...
     });
 });
+app.get('/admin',(req,res)=>{
+    return res.redirect('/admin.html');
+})
+app.get('/public',(req,res)=>{
+    return res.redirect('/index.html');
+})
+const sslServer = https.createServer({
+    key: fs.readFileSync('cert/key.pem'),
+    cert:fs.readFileSync('cert/certificate.pem')
+  }, app)
 
-
+sslServer.listen(8080, () => console.log("Secure server on port 8080"))
 app.use(express.static('public'));
-app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`);
-});
+
 
 
 

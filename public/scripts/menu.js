@@ -27,7 +27,7 @@ async function loadHome(){
     var item_8= ["Random", "images/item_A.png", "Vinyl" , "20€"];
     var items= [item_1,item_2,item_3,item_4,item_5,item_6,item_7,item_8]
     */
-    const prod = await makeRequest("http://localhost:8080/products", {
+    const prod = await makeRequest("https://localhost:8080/products", {
         method: "GET",
         headers: { "Content-type": "application/json; charset=UTF-8" },
     });
@@ -139,26 +139,3 @@ function clearPage(){
 };
 
 // SHOPPING CART
-
-function loadCart(){
-    document.getElementById('showCart').style.opacity = 1;
-    document.getElementById('showCart').style.top = "47%";
-}
-
-function closeCart(){
-    document.getElementById('showCart').style.opacity = 0;
-    document.getElementById('showCart').style.top = "-150%";
-}
-
-// EDIT
-
-function loadEdit(){
-    document.getElementById('showEdit')
-}
-
-
-// SEARCH 
-
-function loadSearch(){
-    document.getElementById('showSearch')
-}

@@ -2,7 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Frontend</title>
+    <script src="scripts/checkLogin.js"></script>
+    <script>
+      checkLogin()
+    </script>
+    <title>Admin Page</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/menuStyle.css" rel="stylesheet">
@@ -11,11 +15,13 @@
     <link href="css/aboutStyle.css"  rel="stylesheet">
     <link href="css/footerStyle.css" rel="stylesheet">
     <link href="css/loginStyle.css" rel="stylesheet">
-    <link href = "css/cartStyle.css" rel="stylesheet">
+    <link href= "css/admin.css" rel="stylesheet">
     <script src="scripts/menu.js"></script>
     <script src="scripts/login.js"></script>
-    <script src="scripts/checkLogin.js"></script>
+    <script src="scripts/admin.js"></script>
+    
     <script src="https://kit.fontawesome.com/bb7f892c15.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
@@ -23,108 +29,15 @@
         <ul>
             <li class="mainMenu"><img class="logo" src="images/muki.png"></li>
             <li class="mainMenu" onclick="loadHome()"><a>Shop</a></li>
-            <li class="mainMenu" onclick="loadTalents()"><a>Talents</a></li>
-            <li class="mainMenu" onclick="loadAbout()"><a>About</a></li>
-            <button class="rightSide" onclick="loadPopup()" style ="display: block;" id="login"><i class="fa fa-user" aria-hidden="true"></i></button> <!--Login-->  
-            <button class="rightSide" onclick="logout()" id="signout"><i class="fa fa-sign-out" aria-hidden="true"><span class="tooltiptext">Sign Out</span></i></button> <!--Logout-->
-            <button class="rightSide" onclick="loadCart()" id="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button> <!--Carrinho-->
-            <button class="rightSide" onclick="loadEdit()" id="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button> <!--Edit-->
-            <button class="rightSide" onclick="loadSearch()" id="search"><i class="fa fa-search" aria-hidden="true"></i></button> <!--Search-->
+            <button class="rightSide" onclick="logoutAdmin()" style ="display: block;" id="signout"><i class="fa fa-sign-out" aria-hidden="true"><span class="tooltiptext">Sign Out</span></i></button> <!--Logout-->
+            <button class="rightSide" onclick="loadProds()" id="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button> <!--Edit-->
+            <button class="rightSide" onclick="loadUsers()" id="search"><i class="fa fa-search" aria-hidden="true"></i></button> <!--Search-->
         </ul>
     </header>
 <section>
-    <div class="content" id="content">
-    </div>
-    <div class = "popup" id="showLogin">
-        <div class="close-btn" onclick="closePopup()">&times;</div>
-        <div class="form">
-            <h2 id="popupTitle" style="color: white; font-family: Arial, Helvetica, sans-serif;">Login</h2>
-            <div class="formElement">
-                <label for="email" style="color: white;"><h4>Email</h4></label>
-                <input type="text" id="email" placeholder="Enter Email">
-            </div>
-            <div class="formElement">
-                <label for="password" style="color: white;"><h4>Password</h4></label>
-                <input type="password" id="password" placeholder="Enter Password">
-            </div>
-            <center><div id="pMsg" style="color: white;"></div></center>
-            <div class="formElement">
-                <button onclick="login()" id="loginBtn" style="font-family: Arial, Helvetica, sans-serif;" >Login</button>
-            </div>
-            <div class="formElement">
-                <button onclick="signUp()" id ="signUpBtn" style="display: none; font-family: Arial, Helvetica, sans-serif;" >Sign Up</button>
-            </div>
-            <div class="formElement">
-                <a href="#" onclick="loadsignUpBTN()" id="Switch" style="color: white;"> Sign Up </a>  <!--To do-->
-            </div>
-        </div>
-    </div>
-    
-    <div class = "popupCart" id="showCart" >
-        <div class="closeCart" onclick="closeCart()">&times;</div>
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header border-bottom-0">
-              <h2 class="modal-title" id="exampleModalLabel">Shopping Cart</h2>
-            </div>
-            <div class="modal-body tableC">
-              <table class="table table-image">
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col"><b>Product</b></th>
-                    <th scope="col"><b>Price</b></th>
-                  </tr>
-                </thead>
-                <tbody>
-                <tr class="productI">
-                    <td class="w-25">
-                        <img src="images/vinyl1.jpg" class="img-fluid img-thumbnail">
-                    </td>
-                    <td><h4><b>Fujii Kaze</h4></b><h5>Deluxe Edition</h5></td>
-                    <td><br><br>50€</td>
-                    <td><br><br>
-                        <a href="#" class="btn btn-danger btn-sm">
-                        <i class="fa fa-times"></i>
-                        </a>
-                    </td>
-                    </tr>
-                  <tr class="productI">
-                    <td class="w-25">
-                      <img src="images/vinyl2.jpg" class="img-fluid img-thumbnail">
-                    </td>
-                    <td><h4><b>Polyphia</h4></b><h5>Standard Vinyl</h5></td>      <!--Tratar destes fucking <br>-->
-                    <td><br><br>25€</td> 
-                    <td><br><br>
-                      <a href="#" class="btn btn-danger btn-sm">
-                        <i class="fa fa-times"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr class="productI">
-                    <td class="w-25">
-                      <img src="images/vinyl3.jpg" class="img-fluid img-thumbnail">
-                    </td>
-                    <td><h4><b>Eve</h4></b><h5>Standard Vinyl</h5></td>
-                    <td><br><br>25€</td>
-                    <td><br><br>
-                      <a href="#" class="btn btn-danger btn-sm">
-                        <i class="fa fa-times"></i>
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table> 
-            </div>
-            <div class="modal-footer">
-                Total: 100€ <span class="price text-success"></span>
-              <button type="button" class="btn btn-success"> Checkout</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+  
+      <div class="content" id="content">
+    </div>  
 
 <footer>
     <div class="footer">

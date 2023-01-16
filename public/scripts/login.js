@@ -20,7 +20,7 @@ async function login(){
         username: email,
         password: password,
     };
-    const response = await makeRequest("http://localhost:8080/login", {
+    const response = await makeRequest("https://localhost:8080/login", {
         method: "POST",
         body: JSON.stringify(user),
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -30,11 +30,16 @@ async function login(){
         case 201:
             {
                 // login ok
+                localStorage.setItem("priv", json.type);
+                localStorage.setItem("token", json.token);
+                if(json.type==1){
+                    window.location.href="admin"
+                }
                 document.getElementById('showLogin').style.opacity = 0
                 document.getElementById("login").style.display = "none"
                 document.getElementById("signout").style.display = "block"
                 document.getElementById("cart").style.display = "block"
-                localStorage.setItem("token", json.token);
+                
                 document.getElementById("email").value = "";
                 document.getElementById("password").value = "";
                 closePopup()
@@ -63,7 +68,13 @@ function logout() {
     document.getElementById("signout").style.display = "none"
     document.getElementById("cart").style.display = "none"
     localStorage.removeItem("token");
-
+    localStorage.removeItem("priv");
+}
+function logoutAdmin() {
+    document.getElementById("signout").style.display = "none"
+    localStorage.removeItem("token");
+    localStorage.removeItem("priv");
+    window.location.href="public"
 }
 
 function loadLoginBTN() {
@@ -96,8 +107,9 @@ async function signUp() {
     const user = {
         username: nome,
         password: senha,
+        type: 0,
     };
-    const response = await makeRequest("http://localhost:8080/signUp", {
+    const response = await makeRequest("https://localhost:8080/signUp", {
         method: "POST",
         body: JSON.stringify(user),
         headers: { "Content-type": "application/json; charset=UTF-8" },

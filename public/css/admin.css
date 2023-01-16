@@ -1,0 +1,15 @@
+.admin {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+.admin td, th {
+    border: 1px solid #666363;
+    text-align: left;
+    padding: 8px;
+}
+
+.admin tr:nth-child(even) {
+    background-color: #252525;
+}

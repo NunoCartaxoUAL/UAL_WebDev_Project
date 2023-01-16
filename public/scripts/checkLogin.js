@@ -1,23 +1,9 @@
 // TODO if(user session is exists) dont redirect
 
 function checkLogin(){
-    //alert(userAutenticado)
-    //return typeof userAutenticado == null;
-
-    //var logged = 
-    //return localStorage.getItem("logged") != null;
-    return true
-}
-
-function redirectToLogin(){
-    if (!checkLogin()){
-        alert("user not loged in. Please login.")
-        window.location.href = "login.html";
+    if(localStorage.getItem("token")==null || localStorage.getItem("priv")!= 1){
+        window.location.href="public"
     }
 }
-function redirectToIndex(){
-    if (!checkLogin()) {
-        alert("user already logged in")
-        window.location.href = "index.html";
-    }
-}
+
+

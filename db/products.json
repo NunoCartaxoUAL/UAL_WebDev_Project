@@ -1,4 +1,23 @@
-[{ "id": 1, "name": "Fujii Kaze", "image":"images/vinyl1.jpg", "type":"Deluxe Vinyl" ,"price":"50"},
-{ "id": 1, "name": "Polyphia", "image":"images/vinyl2.jpg", "type":"Standard Vinyl" ,"price":"25"}]
-
-
+[
+    {
+        "id": 1,
+        "name": "Fujii Kaze",
+        "image": "images/vinyl1.jpg",
+        "type": "Deluxe Vinyl",
+        "price": "50"
+    },
+    {
+        "id": 2,
+        "name": "Polyphia",
+        "image": "images/vinyl2.jpg",
+        "type": "Standard Vinyl",
+        "price": "25"
+    },
+    {
+        "id": 3,
+        "name": "Eve",
+        "image": "images/vinyl3.jpg",
+        "type": "Standard Vinyl",
+        "price": "25"
+    }
+]
