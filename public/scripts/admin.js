@@ -18,7 +18,7 @@ async function loadProds(){
                     <label for="price" style="color: white;">price</label>
                     <input type="text" id="price" placeholder="Enter product price">€
                 </div>
-                <center><div id="pMsg" style="color: white;"></div></center>
+                <center><div id="pMsg1" style="color: white;"></div></center>
                 <div class="formElement">
                     <button onclick="registerProd()" id ="signUpBtn" style="font-family: Arial, Helvetica, sans-serif;" >add new Product</button>
                 </div>
@@ -79,7 +79,7 @@ async function registerProd() {
     switch (response.status) {
         case 201:
             {
-                document.getElementById("pMsg").innerHTML = "done";
+                document.getElementById("pMsg1").innerHTML = "done";
                 break;
             }
     }

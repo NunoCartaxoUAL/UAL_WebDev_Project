@@ -139,3 +139,14 @@ function clearPage(){
 };
 
 // SHOPPING CART
+
+function loadCart(){
+    document.getElementById('showCart').style.opacity = 1;
+    document.getElementById('showCart').style.top = "47%"
+}
+
+function closeCart(){
+    document.getElementById('showCart').style.opacity = 0 
+    document.getElementById('showCart').style.top = "-150%"
+}
+
