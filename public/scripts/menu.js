@@ -25,7 +25,7 @@ async function loadHome(){
                     </div>
                 </td>
                 <td>
-                    <div style="color: #fff;">
+                    <div class ="media" style="color: #fff;">
                         <h3><b>`+n["name"]+`</b></h3>
                         `+n["type"]+`
                         <br>

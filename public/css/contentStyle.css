@@ -77,10 +77,14 @@
     left: 5px;
 }
 
-@media screen and (min-width: 428px) {
+@media screen and (max-width: 700px) {
     .buyButton {
     padding: 0.25em 0.75em;
     margin-left: 4px;
+    }
+
+    .media h3{
+        font-size: 18px;
     }
 }
 

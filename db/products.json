@@ -1,23 +1,47 @@
 [
     {
         "id": 1,
-        "name": "Fujii Kaze",
+        "name": "Fujii Kaze (L)",
         "image": "https://imgur.com/EhHM1Yj.jpeg ",
-        "type": "Deluxe Vinyl",
-        "price": "50"
+        "type": "Deluxe Edition",
+        "price": "25"
     },
     {
         "id": 2,
-        "name": "Polyphia",
-        "image": "https://imgur.com/2CerdWN.jpeg",
-        "type": "Standard Vinyl",
-        "price": "25"
+        "name": "Fujii Kaze (H)",
+        "image": "https://imgur.com/2H5Qlvk.jpeg",
+        "type": "Standard Edition",
+        "price": "50"
     },
     {
         "id": 3,
-        "name": "Eve",
-        "image": "https://imgur.com/Wn88IDw.jpeg ",
-        "type": "Standard Vinyl",
-        "price": "25"
+        "name": "Polyphia(R)",
+        "image": "https://imgur.com/s9Y16Rh.jpeg ",
+        "type": "Deluxe Edition",
+        "price": "40"
+    }
+    ,
+    {
+        "id": 4,
+        "name": "Polyphia (R)",
+        "image": "https://imgur.com/nOEXBNF.jpeg ",
+        "type": "Standard Edtion",
+        "price": "20"
+    }
+    ,
+    {
+        "id": 5,
+        "name": "Eve (Z)",
+        "image": "https://imgur.com/0gnP9MW.jpeg ",
+        "type": "Collectors Edition",
+        "price": "70"
+    }
+    ,
+    {
+        "id": 6,
+        "name": "Eve (B)",
+        "image": "https://imgur.com/Wn88IDw.jpeg ", 
+        "type": "Deluxe Edition",
+        "price": "45"
     }
 ]
