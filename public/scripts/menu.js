@@ -6,27 +6,11 @@ async function calendar(){
     holiday= data.response.holidays[random];
 
     document.getElementById("randomHol").innerHTML += "did you know? "+holiday.date.iso.substring(0, 10) +" was a holiday in japan, it was the "+holiday.name+".     "
-    /*fetch('/calendar')
-.then(response => {
-    const data = response.json();
-    console.log(dados.results);
-    document.getElementById("randomHol").innerHTML += "did you know? "
-
-})*/
+    
 }
 async function loadHome(){
     clearPage()
-    /*
-    var item_1 = ["Fujii Kaze", "images/vinyl1.jpg", "Deluxe Vinyl" , "50€"];
-    var item_2 = ["Polyphia", "images/vinyl2.jpg", "Standard Vinyl" , "25€"];
-    var item_3 = ["Eve", "images/vinyl3.jpg", "Standard Vinyl" , "25€"];
-    var item_4= ["Random", "images/item_A.png", "CD + Vinyl" , "35€"];
-    var item_5= ["Random", "images/item_A.png", "CD" , "15€"];
-    var item_6= ["Random", "images/item_A.png", "CD + Vinyl" , "35€"];
-    var item_7= ["Random", "images/item_A.png", "Vinyl" , "20€"];
-    var item_8= ["Random", "images/item_A.png", "Vinyl" , "20€"];
-    var items= [item_1,item_2,item_3,item_4,item_5,item_6,item_7,item_8]
-    */
+
     const prod = await makeRequest("https://localhost:8080/products", {
         method: "GET",
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -50,7 +34,7 @@ async function loadHome(){
                     </div>
                     <div class="item_buy">
                     <br>
-                        <button class ="buyButton" role="button">
+                        <button class ="buyButton" onclick='addToCart("`+n["id"]+`")' role="button">
                             Add to Cart
                         </button>
                     </div>
@@ -71,8 +55,8 @@ function loadTalents(){
         <div class="talents-col">
             <img src="images/eve.jpg" style="max-width:100%;height:auto;"></a>
             <h3><b>Eve</b></h3>
-            <p>INFO ABOUT THE TALENT</p>
-            <a class="socials" href="https://www.google.com/" id="socials">
+            <p>Eve, formerly known as Keitora and Kurowa, is a Japanese singer-songwriter and Vocaloid producer. He got his start in the music industry by doing covers on Nico Nico Douga. He eventually signed to Toy's Factory in 2019, moving away from Harapeco Records. He was also a guest in "School of Lock!" by Tokyo FM.</p>
+            <a target="_blank" class="socials" href="https://www.youtube.com/channel/UCUXfRsEIJ9xO1DT7TbEWksw" id="socials">
                 <b> Socials ➝ </b>
             </a>
         </div>
@@ -80,8 +64,8 @@ function loadTalents(){
         <div class="talents-col">
             <img src="images/polyphia.jpg" style="max-width:100%;height:auto;">
             <h3><b>Polyphia</b></h3>
-            <p>INFO ABOUT THE TALENT</p>
-            <a class="socials" href="https://www.google.com/" id="socials">
+            <p>Polyphia is a primarily instrumental progressive rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Polyphia's sound is noted for incorporating virtuosic guitar parts with other styles and genres of music.</p>
+            <a target="_blank" class="socials" href="https://www.youtube.com/@Polyphia" id="socials">
                 <b>Socials ➝</b>
             </a>
         </div>
@@ -89,8 +73,8 @@ function loadTalents(){
         <div class="talents-col">
             <img src="images/fujii.jpg" style="max-width:100%;height:auto;">
             <h3><b>Fujii Kaze</b></h3>
-            <p>INFO ABOUT THE TALENT</p>
-            <a class="socials" href="https://www.google.com/" id="socials">
+            <p>Fujii Kaze is a Japanese singer-songwriter and musician under Universal Sigma. Raised in Satosho, Okayama in Japan, he began uploading covers to YouTube since the age of 12. He released his first studio album, Help Ever Hurt Never in 2020, which reached number one on the Billboard Japan Hot Albums.</p>
+            <a target="_blank" class="socials" href="https://www.youtube.com/@FujiiKaze" id="socials">
                 <b>Socials ➝</b>
             </a>
 

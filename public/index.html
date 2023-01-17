@@ -16,6 +16,7 @@
     <script src="scripts/menu.js"></script>
     <script src="scripts/login.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/cart.js"></script>
     <script src="scripts/checkLogin.js"></script>
     <script src="https://kit.fontawesome.com/bb7f892c15.js" crossorigin="anonymous"></script>
 </head>
@@ -48,7 +49,7 @@
                 <label for="password" style="color: white;"><h4>Password</h4></label>
                 <input type="password" id="password" placeholder="Enter Password">
             </div>
-            
+            <center><div id="pMsg" style="color: white;"></div></center>
             <div class="formElement">
                 <button onclick="login()" id="loginBtn" style="font-family: Arial, Helvetica, sans-serif;" >Login</button>
             </div>
@@ -78,49 +79,15 @@
                     <th scope="col"><b>Price</b></th>
                   </tr>
                 </thead>
-                <tbody>
-                <tr class="productI">
-                    <td class="w-25">
-                        <img src="images/vinyl1.jpg" class="img-fluid img-thumbnail">
-                    </td>
-                    <td><h4><b>Fujii Kaze</h4></b><h5>Deluxe Edition</h5></td>
-                    <td><br><br>50€</td>
-                    <td><br><br>
-                        <a href="#" class="btn btn-danger btn-sm">
-                        <i class="fa fa-times"></i>
-                        </a>
-                    </td>
-                    </tr>
-                  <tr class="productI">
-                    <td class="w-25">
-                      <img src="images/vinyl2.jpg" class="img-fluid img-thumbnail">
-                    </td>
-                    <td><h4><b>Polyphia</h4></b><h5>Standard Vinyl</h5></td>      <!--Tratar destes fucking <br>-->
-                    <td><br><br>25€</td> 
-                    <td><br><br>
-                      <a href="#" class="btn btn-danger btn-sm">
-                        <i class="fa fa-times"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr class="productI">
-                    <td class="w-25">
-                      <img src="images/vinyl3.jpg" class="img-fluid img-thumbnail">
-                    </td>
-                    <td><h4><b>Eve</h4></b><h5>Standard Vinyl</h5></td>
-                    <td><br><br>25€</td>
-                    <td><br><br>
-                      <a href="#" class="btn btn-danger btn-sm">
-                        <i class="fa fa-times"></i>
-                      </a>
-                    </td>
-                  </tr>
+                <tbody id="cartTbody">
+                
+                  
                 </tbody>
               </table> 
             </div>
             <div class="modal-footer">
-                Total: 100€ <span class="price text-success"></span>
-              <button type="button" class="btn btn-success"> Checkout</button>
+                 <span id="total" class="price text-success">Total: 0€</span>
+              <button onclick="clearCart()" type="button" class="btn btn-success"> Checkout</button>
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ function loadPopup(){
 function closePopup(){
     document.getElementById('showLogin').style.opacity = 0 
     document.getElementById('showLogin').style.top = "-150%"
+    document.getElementById("pMsg").innerHTML ="";
 }
 
 
@@ -55,7 +56,6 @@ async function login(){
         case 404:
             {
                 // Utilizador não encontrado
-                console.log(json.msg);
                 document.getElementById("pMsg").innerHTML = json.msg;
                 document.getElementById("password").value = "";
                 break;
@@ -82,11 +82,13 @@ function loadLoginBTN() {
     document.getElementById("signUpBtn").style.display = "none";
     document.getElementById( "Switch" ).setAttribute( "onClick", "loadsignUpBTN();" );
     document.getElementById( "Switch" ).innerHTML = "Sign Up";
+    document.getElementById("pMsg").innerHTML="";
     document.getElementById( "popupTitle" ).innerHTML = "Login";
 }
 function loadsignUpBTN() {
     document.getElementById("loginBtn").style.display = "none";
     document.getElementById("signUpBtn").style.display = "block";
+    document.getElementById("pMsg").innerHTML="please Sign up";
     document.getElementById( "Switch" ).setAttribute( "onClick", "loadLoginBTN();" );
     document.getElementById( "Switch" ).innerHTML = "Back to Login";
     document.getElementById( "popupTitle" ).innerHTML = "Sign Up";
@@ -104,6 +106,8 @@ function signIn() {
 async function signUp() {
     const nome = document.getElementById("email").value;
     const senha = document.getElementById("password").value;
+    document.getElementById("password").value="";
+    document.getElementById("email").value="";
     const user = {
         username: nome,
         password: senha,

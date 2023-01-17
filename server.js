@@ -21,7 +21,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 let users = require('./db/users');
 let products = require('./db/products');
-let favoritos = require('./db/favoritos');
 
 // SIGNIN
 app.post("/signUp", (req, res) => {
@@ -61,7 +60,7 @@ app.post("/registerProd", (req, res) => {
     products.push(newProd);
     writeToDB("./db/products.json", products);
     return res.status(201).send({
-        msg: `prod created ${newProd.name}`
+        msg: `Product created ${newProd.name}`
     });
     
 });
@@ -81,9 +80,19 @@ app.delete("/deleteProd/:name", (req, res) => {
     }
     writeToDB("./db/products.json", products);
     return res.status(201).send({
-        msg: `prod deleted`
+        msg: `Product deleted`
     });
     
+});
+
+app.get("/getProd/:id", (req, res) => {
+    const id= req.params.id;
+    for (prod of products){
+        if (prod.id == id) {
+            result=prod;
+        }
+    }
+    return res.status(201).send(result);
 });
 
 app.delete("/removeUser/:username", (req, res) => {
@@ -126,7 +135,6 @@ app.post("/login", (req, res) => {
                 return res.status(201).json({ 
                     auth: true, 
                     token: token,
-                    msg: getFavoritos(user.username),
                     type: user.type })
             } else {
                 return res.status(401).json({ msg: "Invalid Password!" })
@@ -155,13 +163,6 @@ function userExists(nome) {
     return false;
 }
 
-function validarToken(token) {
-    try {
-        return jwt.verify(token, process.env.SECRET);
-    } catch (err) {
-        return false;
-    }
-}
 app.get("/products",(req, res) => {
     if (products) {
         res.status(200).json(products);
@@ -174,27 +175,11 @@ app.get("/listUsers",(req, res) => {
     if (products) {
         res.status(200).json(users);
     } else {
-        res.status(404).json({ msg: "the products weren't found" });
+        res.status(404).json({ msg: "the users weren't found" });
     }
 });
 
-// Acesso à informação somente se autorizado
-app.get("/listarDados", (req, res) => {
-    const decoded = validarToken(req.header('token'));
-    if (!decoded) {
-        return res.status(401).json({ msg: "user não autenticado ou não autorizado!" });
-    }
-    const nome = decoded.username;
-    if (dados) {
-        res.status(200).json(dados);
-    } else {
-        res.status(404).json({ msg: "Dados não encontrados!" });
-    }
-});
 
-function getFavoritos(username) {
-    return ""
-}
 
  // Load the package
 const Calendarific = require('calendarific');

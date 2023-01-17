@@ -130,9 +130,7 @@ ul {
     display: none;
   }
 
-  .mainMenu {
-    font-size: 12px;;
-  }
+
 }
 
 @media screen and (max-width: 1500px){
