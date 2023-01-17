@@ -20,7 +20,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let users = require('./db/users');
-let dados = require('./db/dados');
 let products = require('./db/products');
 let favoritos = require('./db/favoritos');
 
@@ -194,23 +193,11 @@ app.get("/listarDados", (req, res) => {
 });
 
 function getFavoritos(username) {
-    let lista = "<h3>Favoritos do user " + username + "</h3><br>";
-    for (fav of favoritos){
-        if (fav.Username === username){
-            let id = fav.DadoId;
-            for (dad of dados){
-                if (dad.id === id){
-                    lista += "Id: " + dad.id + " - Nome: " + dad.nome + "<br/>";
-                    break;
-                }
-            }
-        }
-    }
-    return lista;
+    return ""
 }
 
  // Load the package
- const Calendarific = require('calendarific');
+const Calendarific = require('calendarific');
 
 app.get('/calendar', (req, res) => {
      // Initlize with an API key

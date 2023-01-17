@@ -8,8 +8,92 @@
     border: 1px solid #666363;
     text-align: left;
     padding: 8px;
+    word-break: break-all;
+}
+
+.specialCell{
+    width: 70%;
 }
 
 .admin tr:nth-child(even) {
     background-color: #252525;
+}
+
+.formA{
+    display: wrap;
+    padding: 10px 10px;
+}
+
+.formA .formElementA {
+    margin: 10px;
+    text-align: center;             
+}
+
+.formA .formElementA input{
+    padding: 3px;
+    box-shadow: 0 0 20px 0px #454545;
+    margin-left: -15px;
+    font-size: 14px;
+    font-weight: 200;
+    width: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.formA .formElementA label{
+    font-weight: bold;
+    width: 130px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label:after { content: ": " }
+
+.formA .formElementA .buyButton{
+    margin-left: 27px;
+}
+
+.formA .formElementA .buyButton2{
+    margin-left: 50px;
+}
+
+@media screen and (max-width: 700px){
+    .admin td, th {
+        width: 21.5%;
+        font-size: 10px;
+        word-break: break-all;
+    }
+
+    .formA .formElementA {
+        margin: 10px;
+        font-size: 15px;
+        
+    }
+
+    .formA .formElementA label{
+        width: 80px;
+        font-size: 12px;
+        white-space:nowrap
+    }
+
+    .formA .formElementA input{
+        padding: 5px;
+        margin-left: -6px;
+        font-size: 14px;
+        font-weight: 200;
+        width: 200px;
+        height: 8.5px;
+    }
+
+    .formA .formElementA .buyButton{
+            padding: 0.25em 0.75em;
+            margin-left: 4px;
+            width: 50%;
+    }
+
+    .formA .formElementA .buyButton2{
+        padding: 0.25em 0.75em;
+        margin-left: 31px;
+        width: 60%;
+}
+    
 }

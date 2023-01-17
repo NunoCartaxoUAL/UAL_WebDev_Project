@@ -92,6 +92,11 @@ ul {
  border: none; 
 }
 
+.fa-users::before{
+  position:relative;
+  margin-left: -5px;
+}
+
 
 
 @media screen and (max-width: 428px){
@@ -163,7 +168,7 @@ ul {
     margin-top: -13px;
   }
 
-  .fa-search::before{
+  .fa-users::before{
     position:relative;
     margin-left: -7px;
     margin-top: -20px;
